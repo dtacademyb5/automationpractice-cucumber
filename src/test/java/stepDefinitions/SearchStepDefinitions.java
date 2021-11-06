@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,7 +13,10 @@ import pages.SearchResultPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.time.Duration;
+
 public class SearchStepDefinitions {
+
 
 
 
@@ -34,7 +39,7 @@ public class SearchStepDefinitions {
     public void the_results_page_should_contain_the_search_term() {
         SearchResultPage searchResultPage = new SearchResultPage();
 
-        Assert.assertTrue(searchResultPage.searchHeader.getText().contains(searchTerm.toUpperCase()));
+        Assert.assertTrue(searchResultPage.searchHeader.getText().contains(searchTerm));
 
 
     }

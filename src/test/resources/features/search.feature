@@ -6,7 +6,7 @@ Feature: As a user I should be perform a product search
     Given I am on the homepage
 
 
-  @search
+  @db
   Scenario: Product search on the homepage
 
     When I enter a product name on to the search and hit enter
@@ -18,7 +18,7 @@ Feature: As a user I should be perform a product search
     When I leave the search term empty and click search
     Then The results page should have the warning message
 
- @temp @smoke @search
+  @smoke @search
   Scenario: Product search on the homepage with invalid input
 
     When I pass invalid search term to the search bar and click
