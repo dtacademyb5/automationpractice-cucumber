@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import sun.plugin.dom.html.HTMLInputElement;
 import utilities.Driver;
 
+import java.util.List;
+
 public class HomePage {
 
 
@@ -21,6 +23,10 @@ public class HomePage {
 
     @FindBy (xpath = "(//a[@title='Blouse'])[2]")
     public WebElement blouseLink;
+
+    @FindBy (xpath = "//ul[@id='homefeatured']//a[@class='product-name']")
+    public List<WebElement> allproduct;
+
 
 
 

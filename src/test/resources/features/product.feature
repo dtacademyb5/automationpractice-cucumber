@@ -25,11 +25,28 @@ Feature: Product related scenarios
       When I add 2.5 on top
       Then I should have 7.5 "apples"
 
-  @temp
+
   Scenario: Parametrization example 2
     Given I have 10 "dollars"
     When I add 22.4 on top
     Then I should have 32.4 "dollars"
+
+
+  Scenario: Docstring example
+    Given I am on the homepage
+    When I send the following text
+    #the doctrings must be on the separate line
+    """
+    {
+   "name" : "groupname",
+   "type" : "GROUP",
+   "description" : "Group Description",
+   "active" : true
+    }
+    """
+
+
+
 
 
 

@@ -49,6 +49,13 @@ public class ProductStepDefinitions {
     }
 
 
+    @When("I send the following text")
+    public void iSendTheFollowingText(String docString) {
+        System.out.println(docString);
+    }
+
+
+
 
 
 

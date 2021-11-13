@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         tags = "@temp",   // "@search and @smoke", "@search or @smoke", "not @smoke"
         features = "src/test/resources/features",
         glue = "stepDefinitions"
-        ,dryRun = true
+//        ,dryRun = true
         ,snippets = CucumberOptions.SnippetType.CAMELCASE
         ,stepNotifications = true
         ,plugin = { "pretty",
