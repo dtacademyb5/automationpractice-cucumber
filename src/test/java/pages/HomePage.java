@@ -30,6 +30,9 @@ public class HomePage {
 
 
 
+
+
+
     public void clickOnProduct(String name){
        String xpath =  "(//a[@title='" + name +  "'])[2]";
        Driver.getDriver().findElement(By.xpath(xpath)).click();

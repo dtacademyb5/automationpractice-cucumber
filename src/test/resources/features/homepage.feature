@@ -53,7 +53,7 @@ Feature: Homepage details
     Then It should be correct
 
 
-  @temp
+
   Scenario: Datatable example Map of String and Map
     Given I am on the homepage
     When I pass this table information as Map<String,Map<String,String>>
@@ -65,6 +65,16 @@ Feature: Homepage details
 
 
     Then It should be correct
+
+  @temp
+  Scenario: Verify product details
+    Given I am on the homepage
+    When I click on a "Blouse"
+    Then The details of the product should be
+      | Name   | Model No | Condition | Description                                               | Price  | Quantity |
+      | Blouse | demo_2   | New       | Short sleeved blouse with feminine draped sleeve detail. | $27.00 | 1        |
+
+
 
 
 
