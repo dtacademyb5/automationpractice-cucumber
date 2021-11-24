@@ -48,6 +48,48 @@ Feature: Product related scenarios
 
 
 
+  Scenario Outline: Verify plus button with multiple data
+    Given I am on the homepage
+    When I click on a "Blouse"
+    And I click on plus button <EnteredCount> times
+    Then The value must become <ExpectedCount>
+
+    Examples:
+      | EnteredCount | ExpectedCount |
+      | 5            | 6             |
+      | 10           | 11            |
+#      | 50           | 51            |
+#      | 100          | 101           |
+#      | 500          | 501           |
+      | -1           | 1             |
+      | -100         | 1             |
 
 
+
+
+
+
+  Scenario: Verify all product details
+    Given I am on the homepage
+    When I click on a "Blouse"
+    Then The product details should be
+      | Product | Model  | Price | Quantity | Condition |
+      | Blouse  | demo_2 | 27.00 | 1        | New       |
+
+
+  @temp
+  Scenario Outline: Verify all product details for different products
+    Given I am on the homepage
+    When I click on a "<product>"
+    Then The product details should be
+      | Product   | Model   | Price   | Quantity   | Condition   |
+      | <product> | <model> | <price> | <quantity> | <condition> |
+
+
+    Examples:
+      | product                     | model  | price | quantity | condition |
+      | Blouse                      | demo_2 | 27.00 | 1        | New       |
+      | Faded Short Sleeve T-shirts | demo_1 | 16.51 | 1        | New       |
+      | Printed Dress               | demo_3 | 26.00 | 1        | New       |
+      | Printed Summer Dress        | demo_5 | 28.98 | 1        | New       |
 

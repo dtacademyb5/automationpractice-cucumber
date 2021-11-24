@@ -5,7 +5,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HomePage;
+import pages.ProductPage;
 import utilities.Driver;
+
+import java.util.List;
+import java.util.Map;
 
 public class ProductStepDefinitions {
 
@@ -54,6 +58,40 @@ public class ProductStepDefinitions {
         System.out.println(docString);
     }
 
+
+    @When("I click on plus button {int} times")
+    public void iClickOnPlusButtonTimes(Integer times) {
+
+        ProductPage productPage = new ProductPage();
+
+        for (int i = 0; i < times; i++) {
+            productPage.plusButton.click();
+        }
+
+
+
+    }
+    @Then("The value must become {int}")
+    public void theValueMustBecome(Integer expected) {
+
+        Integer inputBoxText = Integer.valueOf(new ProductPage().quantity.getAttribute("value"));
+        Assert.assertEquals(expected, inputBoxText);
+    }
+
+
+    @Then("The product details should be")
+    public void theProductDetailsShouldBe(List<Map<String, String>> list) {
+
+        Map<String, String> expectedData = list.get(0);
+        ProductPage productPage = new ProductPage();
+
+        Assert.assertEquals(expectedData.get("Product"), productPage.productName.getText());
+        Assert.assertEquals(expectedData.get("Model"), productPage.modelNo.getText());
+        Assert.assertEquals(expectedData.get("Price"), productPage.price.getText().substring(1));
+        Assert.assertEquals(expectedData.get("Quantity"), productPage.quantity.getAttribute("value"));
+        Assert.assertEquals(expectedData.get("Condition"), productPage.condition.getText());
+
+    }
 
 
 

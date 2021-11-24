@@ -68,6 +68,21 @@ public class SearchStepDefinitions {
           Assert.assertTrue(new SearchResultPage().alert.getText().contains("No results were found for your search"));
     }
 
+    @When("I search for {string}")
+    public void iSearchFor(String product) {
+
+        HomePage homePage = new HomePage();
+        homePage.searchBox.sendKeys(product,  Keys.ENTER);
+
+    }
+    @Then("The results page should also show {string}")
+    public void theResultsPageShouldAlsoShow(String product) {
+        SearchResultPage searchResultPage = new SearchResultPage();
+
+        Assert.assertTrue(searchResultPage.searchHeader.getText().contains(product.toUpperCase()));
+    }
+
+
 
 
 

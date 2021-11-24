@@ -22,5 +22,12 @@ import org.junit.runner.RunWith;
 
 
 )
+//Command to run scenarios with specific tag in CMD
+// mvn verify -Dcucumber.filter.tags="@test"
+// mvn verify -Dcucumber.filter.tags="@smoke"
+
 public class CucumberRunner {
+
+
+
 }

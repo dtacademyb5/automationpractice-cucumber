@@ -22,6 +22,24 @@ Feature: As a user I should be perform a product search
   Scenario: Product search on the homepage with invalid input
 
     When I pass invalid search term to the search bar and click
+
     Then The results page should not have any results with the warning message
+
+
+
+    Scenario Outline: Verify searchBox with multiple valid inputs
+
+      Given I am on the homepage
+      When I search for "<Product>"
+      Then The results page should also show "<Product>"
+
+      Examples:
+                    | Product |
+                    | Blouse  |
+                    | Dress  |
+                    | Printed  |
+                    | Summer  |
+                    | Chiffon  |
+
 
 

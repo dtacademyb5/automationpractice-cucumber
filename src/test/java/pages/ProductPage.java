@@ -7,6 +7,9 @@ import utilities.Driver;
 
 public class ProductPage {
 
+    @FindBy(xpath = "//i[@class='icon-plus']")
+    public WebElement plusButton;
+
     public ProductPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }

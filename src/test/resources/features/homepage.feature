@@ -66,7 +66,7 @@ Feature: Homepage details
 
     Then It should be correct
 
-  @temp
+
   Scenario: Verify product details
     Given I am on the homepage
     When I click on a "Blouse"
