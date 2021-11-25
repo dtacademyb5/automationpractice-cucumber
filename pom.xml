@@ -87,9 +87,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <parallel>methods</parallel>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
+
                     <includes>
 <!--                         name of your Runner class-->
-                        <include>**/*CukeRunner.java</include>
+<!--                        <include>**/*CucumberRunner.java</include>-->
+<!--                        <include>**/*FailedReRunner.java</include>-->
+                        <include>**/*ParallelRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>

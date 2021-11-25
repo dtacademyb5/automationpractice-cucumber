@@ -1,3 +1,4 @@
+@parallel
 Feature: Product related scenarios
 
 

@@ -1,6 +1,6 @@
 Feature: Homepage details
 
-
+ @regression
   Scenario: Verify default product names
     Given I am on the homepage
     Then The product names should be the following
@@ -10,7 +10,7 @@ Feature: Homepage details
       | Printed Dress               |
       | Printed Summer Dress        |
       | Printed Summer Dress        |
-      | Printed Chiffon Dress       |
+      | Printed Chiffon        |
     And The title should be "My Store"
 
 
@@ -66,7 +66,7 @@ Feature: Homepage details
 
     Then It should be correct
 
-
+  @regression
   Scenario: Verify product details
     Given I am on the homepage
     When I click on a "Blouse"

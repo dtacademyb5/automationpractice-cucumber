@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-        tags = "@regression",   // "@search and @smoke", "@search or @smoke", "not @smoke"
-        features = "src/test/resources/features",
+        tags = "@parallel",   // "@search and @smoke", "@search or @smoke", "not @smoke"
+        features = "src/test/resources/parallel",
         glue = "stepDefinitions"
 //        ,dryRun = true
         ,snippets = CucumberOptions.SnippetType.CAMELCASE
@@ -27,7 +27,7 @@ import org.junit.runner.RunWith;
 // mvn verify -Dcucumber.filter.tags="@test"
 // mvn verify -Dcucumber.filter.tags="@smoke"
 
-public class CucumberRunner {
+public class ParallelRunner {
 
 
 

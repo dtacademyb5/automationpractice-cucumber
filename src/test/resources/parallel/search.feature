@@ -1,4 +1,5 @@
 #@temp   tags can be also put on top of feature file, which runs the entire feature file
+@parallel
 Feature: As a user I should be perform a product search
 
 

@@ -9,16 +9,13 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-        tags = "@regression",   // "@search and @smoke", "@search or @smoke", "not @smoke"
-        features = "src/test/resources/features",
+
+        features = "@target/failed.txt",
         glue = "stepDefinitions"
-//        ,dryRun = true
-        ,snippets = CucumberOptions.SnippetType.CAMELCASE
-        ,stepNotifications = true
+
         ,plugin = { "pretty",
                     "html:target/html-report.html",
                      "json:target/cucumber.json",
-                     "rerun:target/failed.txt"
                    }
 
 
@@ -27,7 +24,7 @@ import org.junit.runner.RunWith;
 // mvn verify -Dcucumber.filter.tags="@test"
 // mvn verify -Dcucumber.filter.tags="@smoke"
 
-public class CucumberRunner {
+public class FailedReRunner {
 
 
 

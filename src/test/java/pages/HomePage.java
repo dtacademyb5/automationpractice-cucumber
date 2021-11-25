@@ -12,6 +12,8 @@ import java.util.List;
 public class HomePage {
 
 
+    @FindBy (linkText = "Sign in")
+    public WebElement signInLink;
 
     public HomePage(){
         PageFactory.initElements(Driver.getDriver(), this);
